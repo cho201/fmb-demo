@@ -13,7 +13,7 @@ LD	    = $(PREFIX)gcc
 OBJCOPY	    = $(PREFIX)objcopy
 OBJDUMP	    = $(PREFIX)objdump
 
-OPENCM3_DIR =../libopencm3
+OPENCM3_DIR = ../libopencm3
 OPENCM3_INC = $(OPENCM3_DIR)/include
 OPENCM3_DEFS = -DSTM32L1
 
@@ -30,7 +30,7 @@ VPATH += $(FREEMODBUS_DIRS) $(FREEMODBUS_PORT_DIR)
 # Inclusion of header files
 INCLUDES += $(patsubst %,-I%, . $(OPENCM3_INC) $(FREEMODBUS_INC) $(FREEMODBUS_DIRS) $(FREEMODBUS_PORT_DIR))
 
-CFLAGS += -Os -ggdb3 -std=c99
+CFLAGS += -Os -ggdb3 -std=c11
 CFLAGS += -mcpu=cortex-m3 -msoft-float -mthumb
 CFLAGS +=  $(INCLUDES) -fno-common -MD
 CFLAGS += -Wall -Wextra -Wshadow -Wno-unused-variable -Wimplicit-function-declaration
